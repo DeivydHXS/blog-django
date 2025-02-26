@@ -1,0 +1,27 @@
+{% extends 'blog/base.html' %}
+{% block title %}Bem vindo ao Blog Django{% endblock %}
+
+{% block content %}
+    <h2>Categorias</h2>
+    {% if categorias %}
+        <ul>
+        {% for categoria in categorias %}
+            <li><a href="{% url 'blog:categoria' categoria.slug %}">{{ categoria.titulo }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Não há nenhuma categoria adicionada.</p>
+    {% endif %}
+
+    <h2>Postagems</h2>
+    {% if postagens %}
+        <ul>
+        {% for postagem in postagens %}
+            <li><a href="{% url 'blog:postagem' postagem.slug %}">{{ postagem.titulo }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Não há nenhum postagem adicionado.</p>
+    {% endif %}
+
+{% endblock %}
