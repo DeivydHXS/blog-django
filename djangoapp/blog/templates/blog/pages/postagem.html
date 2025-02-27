@@ -2,12 +2,14 @@
 {% block title %}{{ post.titulo }}{% endblock %}
 
 {% block content %}
-    <div>
-        <h4>Categoria: <a href="{% url 'blog:categoria' postagem.categoria.slug %}">{{ postagem.categoria.titulo }}</a></h4>
-        <h4>Postado em: {{ postagem.data }}</h4>
+    <div class="postagem">
+        <div class="detalhes-postagem">
+            <h2>{{ postagem.titulo }}</h3>
+            <p>Categoria: <a href="{% url 'blog:categoria' postagem.categoria.slug %}">{{ postagem.categoria.titulo }}</a></h4>
+            <p>Escrito por Deivyd  em {{ postagem.data }}</h4>
+        </div>
+        <div class="corpo">
+            {{ postagem.corpo }}
+        </div>
     </div>
-        {{ postagem.corpo }}
-    <hr>
-        <p><a href='/'>Voltar para a Home</a></p>
-    <hr>
 {% endblock %}

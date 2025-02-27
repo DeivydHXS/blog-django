@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Postagem, Categoria
 
-def index(request):
+def home(request):
     return render(request, 'blog/pages/home.html', {
         'categorias': Categoria.objects.all(),
         'postagens': Postagem.objects.all()[:5]

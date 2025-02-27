@@ -1,0 +1,94 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+    width: 70%;
+    justify-self: center;
+    margin: 0;
+}
+
+a {
+    text-decoration: solid;
+    color: black;
+}
+
+/* Header style */
+header {
+    text-align: center;
+    padding-top: 20px;
+}
+
+/* Navbar styles */
+.navbar {
+    text-align: center;
+    padding: 10px;
+}
+
+.navbar-list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navbar-item {
+    display: inline;
+}
+
+/* Main content style */
+main {
+    text-align: center;
+    
+}
+
+/* Footer style */
+footer {
+    padding-bottom: 20px;
+    text-align: center;
+}
+
+/* Home style */
+.postagem-list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.postagem-item {
+    border-color: black;
+    border-style: groove;
+    margin-bottom: 15px;
+}
+
+.categorias {
+    border-style: groove;
+    border-color: black;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.categoria-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.categoria-item {
+    display: inline;
+    margin-left: 5px;
+}
+
+/* Postagem style */
+.postagem {
+    border-color: black;
+    border-style: groove;
+}
+
+.detalhes-postagem {
+    padding: 10px;
+}
+
+.corpo {
+    padding: 30px;
+    text-align: justify;
+}

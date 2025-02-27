@@ -2,22 +2,32 @@
 {% block title %}Bem vindo ao Blog Django{% endblock %}
 
 {% block content %}
-    <h2>Categorias</h2>
-    {% if categorias %}
-        <ul>
-        {% for categoria in categorias %}
-            <li><a href="{% url 'blog:categoria' categoria.slug %}">{{ categoria.titulo }}</a></li>
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>Não há nenhuma categoria adicionada.</p>
-    {% endif %}
 
-    <h2>Postagems</h2>
+    <div class="categorias">
+        {% if categorias %}
+            <b>Categorias</b>
+            <ul class="categoria-list">
+                {% for categoria in categorias %}
+                    <li class="categoria-item">
+                        <a href="{% url 'blog:categoria' categoria.slug %}">{{ categoria.titulo }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Não há nenhuma categoria adicionada.</p>
+        {% endif %}
+    </div>
+
     {% if postagens %}
-        <ul>
+        <ul class="postagem-list">
         {% for postagem in postagens %}
-            <li><a href="{% url 'blog:postagem' postagem.slug %}">{{ postagem.titulo }}</a></li>
+            <li class="postagem-item">
+                <div class="detalhes-postagem">
+                    <h2><a href="{% url 'blog:postagem' postagem.slug %}">{{ postagem.titulo }}</a></h2>
+                    <p>Categoria: <a href="{% url 'blog:categoria' postagem.categoria.slug %}">{{ postagem.categoria.titulo }}</a></h4>
+                    <p>Escrito por Deivyd em {{ postagem.data }}</h4>
+                </div>
+            </li>
         {% endfor %}
         </ul>
     {% else %}

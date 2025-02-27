@@ -2,18 +2,16 @@
 {% block title %}{{ categoria.titulo }}{% endblock %}
 
 {% block content %}
-    {% if postagens %}
-    <div>
-           <ul>
-           {% for postagem in postagens %}
-                  <li><a href="{% url 'blog:postagem' postagem.slug %}">{{ postagem.titulo }}</a></li>
-           {% endfor %}
-           </ul>
-    </div>
-    {% else %}
-        <p>Não existem postagens para essa categoria.</p>
-    {% endif %}
-   <hr>
-    <p><a href='/'>Voltar para a Home</a></p>
-   <hr>
+       <div class="categorias">
+              <b>Categorias</b>
+              {% if postagens %}
+                     <ul class="categoria-list">
+                     {% for postagem in postagens %}
+                            <li class="categoria-item"><a href="{% url 'blog:postagem' postagem.slug %}">{{ postagem.titulo }}</a></li>
+                     {% endfor %}
+                     </ul>
+              {% else %}
+                     <p>Não existem postagens para essa categoria.</p>
+              {% endif %}
+       </div>
 {% endblock %}

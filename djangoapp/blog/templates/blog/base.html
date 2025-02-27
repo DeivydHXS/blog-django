@@ -1,10 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
         <title>Blog Django</title>
     </head>
     <body>
-            <h1>{% block title %}{% endblock %}</h1>
-            {% block content %}
-            {% endblock %}
+            <header>
+                <h1>Blog do Deeh</h1>
+                <h2>Desenvolvimento web e Tecnologia!</h2>
+            </header>
+
+            <nav class="navbar">
+                <ul class="navbar-list">
+                    <li class="navbar-item">
+                        <a href="{% url 'blog:home' %}">INICIO</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="{% url 'blog:home' %}">SOBRE</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="https://github.com/DeivydHXS">GITHUB</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="https://linkedin.com/in/deivyd-homam/">LINKEDIN</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <main>
+                {% block content %}
+                {% endblock %}
+            </main>
+
+            <footer>
+                <p>Copyright © 2025 Deivyd</p>
+            </footer>
     </body>
 </html>
